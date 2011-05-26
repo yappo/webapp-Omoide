@@ -1,4 +1,8 @@
 +{
+    'global' => {
+        password => 'mayue',
+    },
+
     'DB' => {
         dsn       => 'dbi:SQLite:dbname=development.db',
         username  => '',

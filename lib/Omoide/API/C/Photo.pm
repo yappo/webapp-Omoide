@@ -4,6 +4,7 @@ use warnings;
 
 sub upload {
     my($class, $c) = @_;
+    return $c->res_403 unless $c->is_owner;
     $c->render_json({ hoge => 'fuge' });
 }
 

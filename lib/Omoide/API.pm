@@ -16,6 +16,17 @@ sub dispatch {
     return Omoide::API::Dispatcher->dispatch($_[0]) or die "response is not generated";
 }
 
+sub is_owner {
+    my $c = shift;
+    $c->config->{global}->{password} eq $c->req->param('password');
+}
+
+sub res_403 {
+    my $c = shift;
+    my $res = $c->render_json({ error => 'permission denied' });
+    $res->code(403);
+    return $res;
+}
 
 1;
 
