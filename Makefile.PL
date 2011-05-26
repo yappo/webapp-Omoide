@@ -12,7 +12,6 @@ WriteMakefile(
         'HTML::FillInForm::Lite'          => '1.09',
         'Time::Piece'                     => '1.20',
         'Data::Model'                     => '0.00007',
-        'Data::UUID'                      => '1.217',
         'parent'                          => 0,
     },
     MIN_PERL_VERSION => '5.008001',
