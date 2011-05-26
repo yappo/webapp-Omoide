@@ -12,7 +12,13 @@ WriteMakefile(
         'HTML::FillInForm::Lite'          => '1.09',
         'Time::Piece'                     => '1.20',
         'Data::Model'                     => '0.00007',
+        'Path::Class'                     => 0,
         'parent'                          => 0,
+        'Image::JpegCheck'                => 0,
+        'Imager'                          => 0,
+        'Digest::MD5'                     => 0,
+        'JSON::XS'                        => 0,
+        'MIME::Base64'                    => 0,
     },
     MIN_PERL_VERSION => '5.008001',
     (-d 'xt' and $ENV{AUTOMATED_TESTING} || $ENV{RELEASE_TESTING}) ? (

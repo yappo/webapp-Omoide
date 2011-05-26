@@ -45,6 +45,28 @@ install_model photo => schema {
     };
 };
 
+install_model photo_meta => schema {
+    key 'photo_id';
+    index meta_unique_data => [qw/ md5 size /];
+
+    column 'global.id' => 'photo_id' => { auto_increment => 1 };
+
+    column md5
+        => binary => {
+        require  => 1,
+        size     => 16,
+    };
+    column size
+        => int => {
+            require  => 1,
+            unsigned => 1,
+        };
+
+    schema_options create_sql_attributes => {
+        mysql => 'TYPE=InnoDB',
+    };
+};
+
 install_model album => schema {
     key 'album_id';
     index 'title'; # for sort

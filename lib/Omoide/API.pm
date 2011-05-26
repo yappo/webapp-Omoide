@@ -28,5 +28,12 @@ sub res_403 {
     return $res;
 }
 
+sub res_500 {
+    my($c, $msg) = @_;
+    my $res = $c->render_json({ error => $msg });
+    $res->code(500);
+    return $res;
+}
+
 1;
 
