@@ -19,6 +19,7 @@ WriteMakefile(
         'Digest::MD5'                     => 0,
         'JSON::XS'                        => 0,
         'MIME::Base64'                    => 0,
+        'DBIx::Inspector'                 => 0,
     },
     MIN_PERL_VERSION => '5.008001',
     (-d 'xt' and $ENV{AUTOMATED_TESTING} || $ENV{RELEASE_TESTING}) ? (

@@ -7,4 +7,6 @@ use Omoide::DispatcherDeclare;
 post '/v1/photo/upload_is_duped.json' => 'Photo#upload_is_duped';
 post '/v1/photo/upload.json'          => 'Photo#upload';
 
+get  '/v1/photo/list.json'            => 'Photo#list';
+
 1;

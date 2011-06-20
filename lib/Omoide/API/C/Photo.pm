@@ -82,5 +82,30 @@ sub upload {
     $c->render_json({ photo_id => $photo->photo_id, });
 }
 
+
+
+sub list {
+    my($class, $c) = @_;
+    return $c->res_403 unless $c->is_owner;
+
+    my $list = [];
+
+    my $itr = $c->db->get(
+        photo => {
+            order => [
+                +{ take_at => 'DESC' },
+            ],
+        },
+    );
+
+    while (my $row = $itr->next) {
+        push @$list, {
+            id => $row->photo_id,
+        };
+    }
+
+    $c->render_json({ list => $list });
+}
+
 1;
 
