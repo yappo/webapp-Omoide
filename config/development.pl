@@ -12,6 +12,8 @@
         username  => '',
         password  => '',
         reuse_dbh => 1,
-        connect_options => {},
+        connect_options => {
+            sqlite_unicode => 1,
+        },
     },
 };
