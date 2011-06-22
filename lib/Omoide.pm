@@ -21,4 +21,10 @@ sub db {
     };
 };
 
+sub is_owner {
+    my $c = shift;
+    $c->config->{global}->{password} eq $c->req->param('password');
+}
+
+
 1;
