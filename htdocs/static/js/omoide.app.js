@@ -11,7 +11,7 @@ window.Omoide.Config = {
 
 $(function() {
 
-var imageList = new Omoide.View.ImageList();
+var imageList = new Omoide.Controller.ImageList();
 console.log(imageList);
 
 });
