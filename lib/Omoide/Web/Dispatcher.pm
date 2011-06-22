@@ -12,15 +12,15 @@ any '/' => sub {
 
 get '/p/:size/:id' => sub {
     my ($c, $args) = @_;
-    return $c->res_403 unless $c->is_owner;
+    return $c->redirect($c->uri_for('/static/img/nodata.gif')) unless $c->is_owner;
 
     my $id   = $args->{id};
     my $size = $args->{size};
 
-    $c->res_404 unless $args->{size} eq 'o' || $args->{size} eq 's';
+    return $c->redirect($c->uri_for('/static/img/nodata.gif')) unless $args->{size} eq 'o' || $args->{size} eq 's';
 
     my $photo = $c->db->lookup( photo => $id );
-    $c->res_404 unless $photo;
+    return $c->redirect($c->uri_for('/static/img/nodata.gif')) unless $photo;
 
     my $real_filename = sprintf '%010d', $id;
     my $dir1 = substr $real_filename, 0, 1;
@@ -28,7 +28,7 @@ get '/p/:size/:id' => sub {
     my $file = substr $real_filename, 3;
 
     my $path = dir($c->config->{Storage}->{store_path})->subdir($size)->subdir($dir1)->subdir($dir2)->file($file);
-    $c->res_404 unless -f $path;
+    return $c->redirect($c->uri_for('/static/img/nodata.gif')) unless -f $path;
 
     my $fh = $path->openr;
     return $c->create_response(
