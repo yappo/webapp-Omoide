@@ -64,4 +64,21 @@ __PACKAGE__->add_trigger(
     },
 );
 
+
+sub show_error {
+    my ($c, $msg, $code) = @_;
+    $code ||= 500;
+    return $c->create_response($code, ['Content-Type' => 'text/plain;charset=utf-8'], [$msg . (' 'x1024)]);
+}
+
+sub res_403 {
+    my $c = shift;
+    $c->show_error('permission denied', 403);
+}
+
+sub res_500 {
+    my($c, $msg) = @_;
+    $c->show_error($msg, 500);
+}
+
 1;

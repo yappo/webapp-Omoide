@@ -22,7 +22,7 @@ window.Omoide.View.ImageList.prototype = {
 	appendImages: function(list) {
 		var $container = $(this.containerId);
 		$.each(list, function(i, obj) {
-			$container.append($("<div>" + obj.id + "</div>"));
+			$container.append($('<div><img src="' + Omoide.createImageUrl("s", obj.id, true) + '" /></div>'));
 		});
 	},
 
