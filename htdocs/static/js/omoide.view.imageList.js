@@ -20,10 +20,12 @@ window.Omoide.View.ImageList.prototype = {
 	containerId: null,
 
 	appendImages: function(list) {
-		var $container = $(this.containerId);
+		var html = "";
 		$.each(list, function(i, obj) {
-			$container.append($('<div><img src="' + Omoide.createImageUrl("s", obj.id, true) + '" /></div>'));
+			html = html + '<div><img src="' + Omoide.createImageUrl("s", obj.id, true) + '" /></div>';
 		});
+		var $container = $(this.containerId);
+		$container.html(html);
 	},
 
 	_: null
