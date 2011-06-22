@@ -8,3 +8,7 @@ nytprof/
 development.db
 test.db
 store_path/
+pm_to_blib
+MYMETA.yml
+blib/
+*.swp
