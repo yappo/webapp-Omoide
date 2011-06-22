@@ -19,6 +19,13 @@ window.Omoide.View.ImageList = function(args) {
 window.Omoide.View.ImageList.prototype = {
 	containerId: null,
 
+	appendImages: function(list) {
+		var $container = $(this.containerId);
+		$.each(list, function(i, obj) {
+			$container.append($("<div>" + obj.id + "</div>"));
+		});
+	},
+
 	_: null
 };
 

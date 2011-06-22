@@ -21,4 +21,8 @@
 
 <hr class="space">
 
+<div id="imageList"></div>
+
+<hr class="space">
+
 [% END %]

@@ -8,6 +8,8 @@ if (typeof(window.Omoide.Controller) == 'undefined') {
 
 
 window.Omoide.Controller.ImageList = function(args) {
+	this.view = new Omoide.View.ImageList(args);
+
 	if (args === undefined) {
 		return this;
 	}
@@ -17,7 +19,32 @@ window.Omoide.Controller.ImageList = function(args) {
 };
 
 window.Omoide.Controller.ImageList.prototype = {
+	view: null,
 	containerId: null,
+
+	open: function() {
+		this.loadList();
+	},
+
+	loadList: function() {
+		var self = this;
+		$.ajax({
+			url: Omoide.Config.api_endpoint + "/photo/list.json",
+			type: "get",
+			data: {
+				password: Omoide.Config.api_password
+			},
+			dataType: "json",
+			cache: false,
+			success: function(json) {
+				console.log(json);
+				if (json && typeof json.list) {
+					self.view.appendImages(json.list);
+				}
+			}
+		});
+	},
+
 
 	_: null
 };
