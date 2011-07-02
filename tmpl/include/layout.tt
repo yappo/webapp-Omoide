@@ -10,6 +10,7 @@
     <link href="[% uri_for('/static/css/main.css') %]?[% now %]" rel="stylesheet" type="text/css" media="screen" />
     <link href="[% uri_for('/static/css/omoide.css') %]?[% now %]" rel="stylesheet" type="text/css" media="screen" />
     <script src="[% uri_for('/static/js/jquery-1.6.1.min.js') %]"></script>
+    <script src="[% uri_for('/static/js/omoide.controller.mainContainer.js') %]?[% now %]"></script>
     <script src="[% uri_for('/static/js/omoide.controller.imageList.js') %]?[% now %]"></script>
     <script src="[% uri_for('/static/js/omoide.controller.albumList.js') %]?[% now %]"></script>
     <script src="[% uri_for('/static/js/omoide.view.imageList.js') %]?[% now %]"></script>

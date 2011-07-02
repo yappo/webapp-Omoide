@@ -2,7 +2,7 @@
 
 <hr class="space">
 
-<div id="controlContainer">
+<div id="mainContainer">
   <div id="albumList">album list</div>
   <div id="imageList"></div>
 </div>

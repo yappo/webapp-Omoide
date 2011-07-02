@@ -14,7 +14,7 @@ border: 1px solid red;
 border: 1px solid blue;
 }
 
-#controlContainer:after {
+#mainContainer:after {
 	content: "";
 	clear: both;
 	display: block;
