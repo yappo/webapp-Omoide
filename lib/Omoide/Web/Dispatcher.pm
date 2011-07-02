@@ -7,7 +7,9 @@ use Path::Class;
 
 any '/' => sub {
     my ($c) = @_;
-    $c->render('index.tt');
+    $c->render('index.tt', {
+        now => time(),
+    });
 };
 
 get '/p/:size/:id' => sub {

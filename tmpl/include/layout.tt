@@ -10,12 +10,12 @@
     <link href="[% uri_for('/static/css/blueprint/screen.css') %]" rel="stylesheet" type="text/css" media="screen" />
     <link href="[% uri_for('/static/css/blueprint/print.css') %]" rel="stylesheet" type="text/css" media="print" />
     <!--[if lt IE 8]><link rel="stylesheet" href="[% uri_for('/static/css/blueprint/ie.css') %]" type="text/css" media="screen, projection"><![endif]--> 
-    <link href="[% uri_for('/static/css/main.css') %]" rel="stylesheet" type="text/css" media="screen" />
-    <link href="[% uri_for('/static/css/omoide.css') %]" rel="stylesheet" type="text/css" media="screen" />
+    <link href="[% uri_for('/static/css/main.css') %]?[% now %]" rel="stylesheet" type="text/css" media="screen" />
+    <link href="[% uri_for('/static/css/omoide.css') %]?[% now %]" rel="stylesheet" type="text/css" media="screen" />
     <script src="[% uri_for('/static/js/jquery-1.6.1.min.js') %]"></script>
-    <script src="[% uri_for('/static/js/omoide.controller.imageList.js') %]"></script>
-    <script src="[% uri_for('/static/js/omoide.view.imageList.js') %]"></script>
-    <script src="[% uri_for('/static/js/omoide.app.js') %]"></script>
+    <script src="[% uri_for('/static/js/omoide.controller.imageList.js') %]?[% now %]"></script>
+    <script src="[% uri_for('/static/js/omoide.view.imageList.js') %]?[% now %]"></script>
+    <script src="[% uri_for('/static/js/omoide.app.js') %]?[% now %]"></script>
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
