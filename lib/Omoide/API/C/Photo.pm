@@ -95,6 +95,7 @@ sub list {
             order => [
                 +{ take_at => 'DESC' },
             ],
+            limit => 100,
         },
     );
 
