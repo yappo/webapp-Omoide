@@ -15,7 +15,7 @@ border: 1px solid red;
 border: 1px solid blue;
 }
 
-#mainContainer:after {
+#mainContainer:after, #imageList:after {
 	content: "";
 	clear: both;
 	display: block;
@@ -24,6 +24,20 @@ border: 1px solid blue;
 }
 
 
+#imageList .thumbnail img {
+}
+
 #imageList .thumbnail {
-	display: inline;
+	float: left;
+	width: 75px;
+	height: 75px;
+	margin-left: 11px;
+	margin-right: 10px;
+	margin-top: 11px;
+	margin-bottom: 10px;
+	border: 2px solid #fc9;
+}
+
+#imageList .thumbnailSelected {
+	border: 2px solid #f60;
 }
