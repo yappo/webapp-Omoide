@@ -13,8 +13,6 @@ window.Omoide.View.ImageList = function(args) {
 	}
 	this.containerId = args.containerId;
 
-console.log(this.containerId);
-	var $dom = $(this.containerId);
 	this.fixupContainerSize();
 
 	return this;
@@ -35,8 +33,6 @@ window.Omoide.View.ImageList.prototype = {
 	fixupContainerSize: function() {
 		var $dom = $(this.containerId);
 		$dom.width(500)
-		console.log($dom.width());
-		console.log($dom.height());
 	},
 
 	_: null
