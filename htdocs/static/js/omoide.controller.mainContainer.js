@@ -26,8 +26,37 @@ window.Omoide.Controller.MainContainer.prototype = {
 	containerId: null,
 
 	fixupContainerSize: function() {
-		this.albumListContainer.view.fixupContainerSize();
-		this.imageListContainer.view.fixupContainerSize();		
+		var widthPadding = 4;
+
+		var $window = $(window);
+		var $header = $("#header");
+		var $footer = $("#footer");
+		var height = $window.height() - $header.height() - $footer.height() - 8;
+
+		var wwidth = $window.width();
+		var albumWidth, imageWidth;
+		if (wwidth < 600) {
+			albumWidth = 200;
+			imageWidth = 400;
+		} else if (wwidth < 700) {
+			imageWidth = 400;
+			albumWidth = wwidth - imageWidth - widthPadding;
+		} else {
+			albumWidth = 300;
+			imageWidth = wwidth - albumWidth - widthPadding;
+		}
+
+		var $dom = $(this.containerId);
+		$dom.width(albumWidth + imageWidth + widthPadding);
+
+		this.albumListContainer.view.fixupContainerSize({
+			width: albumWidth,
+			height: height
+		});
+		this.imageListContainer.view.fixupContainerSize({
+			width: imageWidth,
+			height: height
+		});
 	},
 
 

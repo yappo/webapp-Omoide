@@ -1,12 +1,8 @@
 [% WRAPPER 'include/layout.tt' %]
 
-<hr class="space">
-
 <div id="mainContainer">
   <div id="albumList">album list</div>
   <div id="imageList"></div>
 </div>
-
-<hr class="space">
 
 [% END %]

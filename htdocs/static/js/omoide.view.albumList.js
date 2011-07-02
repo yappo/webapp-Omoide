@@ -28,9 +28,10 @@ window.Omoide.View.AlbumList.prototype = {
 		$container.html(html);
 	},
 
-	fixupContainerSize: function() {
+	fixupContainerSize: function(args) {
 		var $dom = $(this.containerId);
-		$dom.width(200)
+		$dom.width(args.width)
+		$dom.height(args.height)
 	},
 
 	_: null

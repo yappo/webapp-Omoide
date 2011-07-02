@@ -22,13 +22,13 @@
 </head>
 <body[% IF bodyID %] class="[% bodyID %]"[% END %]>
     <div class="container">
-        <header>
+        <header id="header">
             <a href="[% uri_for('/') %]">Omoide</a>
         </header>
         <div id="main">
             [% content %]
         </div>
-        <footer>
+        <footer id="footer">
             Powered by <a href="http://amon.64p.org/">Amon2</a>
         </footer>
     </div>
