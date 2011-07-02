@@ -13,8 +13,6 @@ window.Omoide.View.ImageList = function(args) {
 	}
 	this.containerId = args.containerId;
 
-	this.fixupContainerSize();
-
 	return this;
 };
 

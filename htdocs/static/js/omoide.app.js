@@ -31,6 +31,12 @@ var imageList = new Omoide.Controller.ImageList({
 console.log(imageList);
 imageList.open();
 
+var mainContainer = new Omoide.Controller.MainContainer({
+	containerId: "#mainContainer",
+	albumListContainer: albumList,
+	imageListContainer: imageList
+});
+
 });
 
 })(window);

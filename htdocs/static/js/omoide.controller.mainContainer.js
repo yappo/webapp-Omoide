@@ -12,12 +12,24 @@ window.Omoide.Controller.MainContainer = function(args) {
 		return this;
 	}
 	this.containerId = args.containerId;
+	this.albumListContainer = args.albumListContainer;
+	this.imageListContainer = args.imageListContainer;
+
+	this.fixupContainerSize();
 
 	return this;
 };
 
 window.Omoide.Controller.MainContainer.prototype = {
+	albumListContainer: null,
+	imageListContainer: null,
 	containerId: null,
+
+	fixupContainerSize: function() {
+		this.albumListContainer.view.fixupContainerSize();
+		this.imageListContainer.view.fixupContainerSize();		
+	},
+
 
 	_: null
 };
