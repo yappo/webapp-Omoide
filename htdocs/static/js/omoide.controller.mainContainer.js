@@ -52,14 +52,14 @@ window.Omoide.Controller.MainContainer.prototype = {
 
 		var wwidth = $window.width();
 		var albumWidth, imageWidth;
-		if (wwidth < 600) {
-			albumWidth = 200;
+		if (wwidth < 650) {
+			albumWidth = 150;
 			imageWidth = 400;
 		} else if (wwidth < 700) {
-			imageWidth = 400;
+			imageWidth = 550;
 			albumWidth = wwidth - imageWidth - widthPadding;
 		} else {
-			albumWidth = 300;
+			albumWidth = 200;
 			imageWidth = wwidth - albumWidth - widthPadding;
 		}
 
