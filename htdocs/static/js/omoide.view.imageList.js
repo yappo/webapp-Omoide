@@ -13,6 +13,10 @@ window.Omoide.View.ImageList = function(args) {
 	}
 	this.containerId = args.containerId;
 
+console.log(this.containerId);
+	var $dom = $(this.containerId);
+	this.fixupContainerSize();
+
 	return this;
 };
 
@@ -22,10 +26,17 @@ window.Omoide.View.ImageList.prototype = {
 	appendImages: function(list) {
 		var html = "";
 		$.each(list, function(i, obj) {
-			html = html + '<div><img src="' + Omoide.createImageUrl("s", obj.id, true) + '" /></div>';
+			html = html + '<div class="thumbnail"><img src="' + Omoide.createImageUrl("s", obj.id, true) + '" /></div>';
 		});
 		var $container = $(this.containerId);
 		$container.html(html);
+	},
+
+	fixupContainerSize: function() {
+		var $dom = $(this.containerId);
+		$dom.width(500)
+		console.log($dom.width());
+		console.log($dom.height());
 	},
 
 	_: null

@@ -21,7 +21,10 @@
 
 <hr class="space">
 
-<div id="imageList"></div>
+<div id="controlContainer">
+  <div id="albumList">album list</div>
+  <div id="imageList"></div>
+</div>
 
 <hr class="space">
 
