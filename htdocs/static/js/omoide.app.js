@@ -20,6 +20,11 @@ window.Omoide.createImageUrl = function(size, id, isLogin) {
 
 $(function() {
 
+var albumList = new Omoide.Controller.AlbumList({
+	containerId: "#albumList"
+});
+albumList.open();
+
 var imageList = new Omoide.Controller.ImageList({
 	containerId: "#imageList"
 });
